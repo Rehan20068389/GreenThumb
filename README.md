@@ -2,6 +2,13 @@ GreenThumb – Hybrid Mobile Application
 
 Module: B9IS126 – Web and Mobile Technologies
 Assessment: CA2 – Develop a Hybrid Mobile Application
+
+ Group Members
+
+Student Name: REHAN RAJU
+
+Student Number:20068389
+
 Platform: Android
 Technology: Apache Cordova
 
@@ -75,11 +82,7 @@ Platform-specific folders
 
 Plugin configurations
 
- Group Members
 
-Student Name: REHAN RAJU
-
-Student Number:20068389
 
 
 
