@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport"
+        content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- Content Security Policy: Essential for Whitelist Plugin Compliance -->
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src * 'unsafe-inline' gap:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; media-src *" />
+
+    <!-- Fonts Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+
+    <title>GreenThumb Nursery</title>
+</head>
+
+<body>
+
+    <!-- HOME PAGE -->
+    <div data-role="page" id="home" class="page-home">
+        <div data-role="header" data-position="fixed" class="app-header">
+            <h1>GreenThumb</h1>
+        </div>
+
+        <div data-role="main" class="ui-content center-content">
+            <div class="hero-section">
+                <img src="img/logo.png" alt="GreenThumb Logo" class="app-logo">
+                <h2 class="hero-title">GreenThumb</h2>
+                <p class="hero-subtitle">Nature in your pocket</p>
+            </div>
+
+            <div class="dashboard-grid">
+                <!-- Catalog Card -->
+                <a href="#catalog" class="dashboard-card" data-transition="slide">
+                    <div class="card-icon ui-icon-grid ui-btn-icon-notext"></div>
+                    <h3>Catalog</h3>
+                    <p>Browse Plants</p>
+                </a>
+
+                <!-- Location Card -->
+                <a href="#location" class="dashboard-card" data-transition="slide">
+                    <div class="card-icon ui-icon-location ui-btn-icon-notext"></div>
+                    <h3>Find Us</h3>
+                    <p>Map & Directions</p>
+                </a>
+
+                <!-- Camera Card -->
+                <a href="#snap" class="dashboard-card" data-transition="slide">
+                    <div class="card-icon ui-icon-camera ui-btn-icon-notext"></div>
+                    <h3>Plant Doctor</h3>
+                    <p>Diagnose Issues</p>
+                </a>
+            </div>
+        </div>
+
+        <div data-role="footer" data-position="fixed" class="app-footer">
+            <h4>&copy; 2024 GreenThumb Nursery</h4>
+        </div>
+    </div>
+
+    <!-- CATALOG PAGE -->
+    <div data-role="page" id="catalog" data-theme="a">
+        <div data-role="header">
+            <a href="#home" data-icon="home" data-iconpos="notext">Home</a>
+            <h1>Our Plants</h1>
+        </div>
+        <div data-role="main" class="ui-content">
+            <form class="ui-filterable">
+                <input id="plantFilter" data-type="search" placeholder="Search plants...">
+            </form>
+            <ul data-role="listview" data-filter="true" data-input="#plantFilter" data-inset="true">
+                <li data-role="list-divider">Indoor Favorites</li>
+                <li>
+                    <a href="#">
+                        <img src="img/icon.png" class="plant-thumb">
+                        <!-- Using icon as placeholder if specific plant img fails -->
+                        <h2>Monstera Deliciosa</h2>
+                        <p>The Cheese Plant - $25.00</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="img/icon.png" class="plant-thumb">
+                        <h2>Fiddle Leaf Fig</h2>
+                        <p>Tricky but beautiful - $45.00</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="img/icon.png" class="plant-thumb">
+                        <h2>Snake Plant</h2>
+                        <p>Indestructible - $15.00</p>
+                    </a>
+                </li>
+                <li data-role="list-divider">Outdoor</li>
+                <li>
+                    <a href="#">
+                        <img src="img/icon.png" class="plant-thumb">
+                        <h2>Lavender</h2>
+                        <p>Aromatic and purple - $12.00</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#home" data-icon="home">Home</a></li>
+                    <li><a href="#snap" data-icon="camera">Snap</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- LOCATION PAGE (Geolocation API) -->
+    <div data-role="page" id="location" data-theme="a">
+        <div data-role="header">
+            <a href="#home" data-icon="back">Back</a>
+            <h1>Store Locator</h1>
+        </div>
+        <div data-role="main" class="ui-content">
+            <h3>Find Us</h3>
+            <p>We use your current location to guide you to our heavy garden center.</p>
+
+            <button id="btn-geo" class="ui-btn ui-btn-b ui-corner-all ui-icon-location ui-btn-icon-left">Get My
+                Location</button>
+
+            <div id="geo-results" class="ui-body ui-body-a ui-corner-all" style="display:none; margin-top:20px;">
+                <p><strong>Latitude:</strong> <span id="lat">Wait...</span></p>
+                <p><strong>Longitude:</strong> <span id="long">Wait...</span></p>
+                <hr>
+                <p id="dist-msg">Calculating distance...</p>
+            </div>
+
+            <div id="map-canvas">
+                <!-- Placeholder for map or result -->
+            </div>
+        </div>
+    </div>
+
+    <!-- SNAP PAGE (Camera API) -->
+    <div data-role="page" id="snap" data-theme="b">
+        <div data-role="header">
+            <a href="#home" data-icon="back">Back</a>
+            <h1>Plant Doctor</h1>
+        </div>
+        <div data-role="main" class="ui-content center-content">
+            <h3>Sick Plant?</h3>
+            <p>Take a photo of your plant and our experts will diagnose it!</p>
+
+            <button id="btn-camera"
+                class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-camera ui-btn-icon-left">Take Photo</button>
+
+            <div id="photo-area" style="margin-top:20px;">
+                <img id="myImage" src="" style="display:none; width:100%; border: 2px solid white; border-radius: 8px;">
+            </div>
+
+            <button id="btn-send" class="ui-btn ui-btn-active" disabled>Send for Diagnosis</button>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+</body>
+
+</html>

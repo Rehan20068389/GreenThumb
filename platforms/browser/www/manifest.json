@@ -1,0 +1,11 @@
+{
+  "background_color": "#FFF",
+  "display": "standalone",
+  "name": "GreenThumb",
+  "short_name": "GreenThumb",
+  "version": "com.example.greenthumb",
+  "description": "YOUR PERSONAL PLANT COMPANION - Identify, Cure, and Grow.",
+  "author": "GreenThumb Team",
+  "icons": [],
+  "start_url": "index.html"
+}

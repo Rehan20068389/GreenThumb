@@ -1,0 +1,200 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+
+/* --- GLOBAL RESETS --- */
+* {
+    font-family: 'Poppins', sans-serif !important;
+    text-shadow: none !important;
+    box-shadow: none !important;
+    /* Reset JQM Box Shadows */
+}
+
+body {
+    background-color: #f1f8e9 !important;
+    /* Soft Green-White */
+}
+
+.ui-page {
+    background: #f1f8e9 !important;
+}
+
+.ui-content {
+    background: transparent !important;
+    padding: 20px !important;
+}
+
+/* --- THEME COLORS --- */
+/* Consistent Header & Footer */
+.app-header,
+.app-footer,
+.ui-header,
+.ui-footer {
+    background-color: #2E7D32 !important;
+    /* Solid Dark Green */
+    border: none !important;
+    color: white !important;
+    padding: 10px 0;
+}
+
+.ui-title {
+    font-size: 1.2rem !important;
+    letter-spacing: 1px;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+    margin: 0 !important;
+}
+
+/* --- HERO SECTION (Home) --- */
+.hero-section {
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 10px;
+}
+
+.app-logo {
+    width: 120px;
+    height: 120px;
+    border-radius: 25px;
+    border: 4px solid #ffffff;
+    box-shadow: 0 10px 20px rgba(46, 125, 50, 0.2) !important;
+    margin-bottom: 15px;
+}
+
+.hero-title {
+    color: #2E7D32;
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.hero-subtitle {
+    color: #558b2f;
+    font-size: 1rem;
+    margin-top: 5px;
+    font-weight: 400;
+}
+
+/* --- DASHBOARD GRID --- */
+.dashboard-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+
+.dashboard-card {
+    display: flex !important;
+    align-items: center;
+    background: white !important;
+    padding: 20px;
+    border-radius: 16px;
+    text-decoration: none !important;
+    position: relative;
+    border-left: 6px solid #43A047;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05) !important;
+    transition: transform 0.2s;
+}
+
+.dashboard-card:active {
+    transform: scale(0.98);
+}
+
+.dashboard-card h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #333;
+    font-weight: 600;
+}
+
+.dashboard-card p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #777;
+    margin-top: 2px;
+}
+
+.card-icon {
+    background-color: #e8f5e9 !important;
+    border-radius: 50%;
+    width: 50px !important;
+    height: 50px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+}
+
+/* Use JQM Icons inside our custom circles */
+.card-icon:after {
+    background-color: #2E7D32 !important;
+    /* Icon color */
+    left: 14px !important;
+    top: 14px !important;
+}
+
+/* --- STANDARD BUTTONS --- */
+.ui-btn {
+    background-color: white !important;
+    border: 1px solid #ddd !important;
+    color: #333 !important;
+    border-radius: 12px !important;
+    font-weight: 500 !important;
+}
+
+/* Primary Action Buttons */
+#btn-camera,
+#btn-geo,
+.ui-btn-active {
+    background-color: #2E7D32 !important;
+    border: none !important;
+    color: white !important;
+    box-shadow: 0 4px 10px rgba(46, 125, 50, 0.3) !important;
+}
+
+/* --- LIST VIEW (Catalog) --- */
+.ui-listview {
+    margin-top: 10px !important;
+}
+
+.ui-listview>li {
+    background: white !important;
+    border-radius: 12px;
+    margin-bottom: 12px !important;
+    border: none !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05) !important;
+}
+
+.ui-listview>li img.plant-thumb {
+    border-radius: 8px;
+    margin: 10px !important;
+    height: 80px;
+    width: 80px;
+    object-fit: cover;
+}
+
+/* --- UTILITIES --- */
+.center-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Map/Photo Containers */
+#geo-results,
+#photo-area {
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08) !important;
+    margin-top: 15px;
+}
+
+/* Inputs */
+.ui-input-search,
+.ui-input-text {
+    border-radius: 12px !important;
+    border: 1px solid #eee !important;
+    background-color: white !important;
+}
